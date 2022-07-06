@@ -1,5 +1,5 @@
-# C# .NET 6 Minimal API 
-##### Example sourcode with simple CRUD Operations (PUT, POST, GET, DELETE) with Swagger/Open API 
+# C# .NET 6 Minimal Web API 
+##### Example source code with simple CRUD Operations (PUT, POST, GET, DELETE) with Swagger/Open API 
 
 #### DESCRIPTION:
 
