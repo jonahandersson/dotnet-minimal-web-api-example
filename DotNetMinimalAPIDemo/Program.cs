@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 // Add "Router" classes as a service
 builder.Services.AddScoped<RouterBase, ProductRouter>();
 builder.Services.AddScoped<RouterBase,CustomerRouter>();
-builder.Services.AddScoped<RouterBase, OrderRouter>();
+builder.Services.AddScoped<RouterBase,OrderRouter>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

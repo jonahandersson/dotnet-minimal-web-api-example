@@ -18,7 +18,7 @@ namespace DotNetMinimalAPIDemo.RouterClasses
         /// <returns>An IResult object</returns>
         protected virtual IResult Get()
         {
-            Logger.LogInformation("Getting all customers");
+            Logger.LogInformation("Getting all orders");
             return Results.Ok(GetAll());
         }
 

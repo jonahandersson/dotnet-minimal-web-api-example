@@ -1,0 +1,23 @@
+[
+  {
+    "customerId": "1",
+    "firstname": "Orlando",
+    "lastname": "Gee",
+    "companyName": "Company ABC",
+    "emailaddress": "orlando0@adventure-works.com"
+  },
+  {
+    "customerId": "2",
+    "firstname": "Lucy",
+    "lastname": "Harrington",
+    "companyName": "Metropolitan Sports Supply",
+    "emailaddress": "orlando0@adventure-works.com"
+  },
+  {
+    "customerId": "3",
+    "firstname": "Janet",
+    "lastname": "Gates",
+    "companyName": "Modular Cycle Systems",
+    "emailaddress": "janet1@adventure-works.com"
+  }
+]
