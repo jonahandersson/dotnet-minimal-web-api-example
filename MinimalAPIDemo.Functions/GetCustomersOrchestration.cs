@@ -6,6 +6,7 @@ using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
+using MinimalAPIDemo.Functions.Entities;
 
 namespace MinimalAPIDemo.Functions
 {
@@ -15,24 +16,25 @@ namespace MinimalAPIDemo.Functions
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
-            var outputs = new List<string>();
+            var customers = new List<Customer>();
+            var printedCustomerNames = new List<string>();
+            //TODO Get customer data from the minimal API 
 
-            //TODO 
+            foreach (var cx in customers)
+            {
+                printedCustomerNames.Add(await context.CallActivityAsync<string>("GetCustomers_Print", cx));
+            }
 
-            // Replace "hello" with the name of your Durable Activity Function.
-            outputs.Add(await context.CallActivityAsync<string>("GetCustomers_Print", "Tokyo"));
-            outputs.Add(await context.CallActivityAsync<string>("GetCustomers_Print", "Seattle"));
-            outputs.Add(await context.CallActivityAsync<string>("GetCustomers_Print", "London"));
-
-            // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
-            return outputs;
+            // returns list of customers from Minimal API after retrieval and print 
+            return printedCustomerNames;
         }
 
         [FunctionName("GetCustomers_Print")]
-        public static string SayHello([ActivityTrigger] string name, ILogger log)
+        public static string SayHello([ActivityTrigger] Customer customer, ILogger log)
         {
-            log.LogInformation($"Saying hello to {name}.");
-            return $"Hello {name}!";
+            log.LogInformation($"Saying hello to {customer.FirstName + " " + customer.LastName }.");
+            var customerFullName = customer.FirstName + " " + customer.LastName;
+            return $"Hello {customerFullName}!";
         }
 
         [FunctionName("GetCustomers_HttpFunction")]
