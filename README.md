@@ -1,6 +1,8 @@
 # C# .NET 6 Minimal Web API 
 ##### Example source code with simple CRUD Operations (PUT, POST, GET, DELETE) with Swagger/Open API 
 
+#### NOTE: Ongoing project
+
 #### DESCRIPTION:
 
 Simple example in C# .NET 6 for minimal web APIs with basic CRUD operations and example data. 
