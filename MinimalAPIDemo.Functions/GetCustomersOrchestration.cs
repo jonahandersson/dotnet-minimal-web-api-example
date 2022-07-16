@@ -16,17 +16,29 @@ namespace MinimalAPIDemo.Functions
         public static async Task<List<string>> RunOrchestrator(
             [OrchestrationTrigger] IDurableOrchestrationContext context)
         {
-            var customers = new List<Customer>();
-            var printedCustomerNames = new List<string>();
-            //TODO Get customer data from the minimal API 
+            try
+            {               
+                var printedCustomerNames = new List<string>();          
 
-            foreach (var cx in customers)
-            {
-                printedCustomerNames.Add(await context.CallActivityAsync<string>("GetCustomers_Print", cx));
+                var customers = await context.CallActivityAsync<List<Customer>>("GetCustomersFromMinimalAPIEndpoint", null);
+
+                if (customers != null && customers.Count > 0)
+                {
+                    foreach (var cx in customers)
+                    {
+                        printedCustomerNames.Add(await context.CallActivityAsync<string>("GetCustomers_Print", cx));
+                    }
+                }               
+
+                // returns list of customers from Minimal API after retrieval and print 
+                return printedCustomerNames;
             }
-
-            // returns list of customers from Minimal API after retrieval and print 
-            return printedCustomerNames;
+            catch (System.Exception)
+            {
+                //TODO 
+                throw;
+            }
+           
         }
 
         [FunctionName("GetCustomers_Print")]
@@ -47,7 +59,6 @@ namespace MinimalAPIDemo.Functions
             string instanceId = await starter.StartNewAsync("GetCustomer_Orchestration", null);
 
             log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
-
             return starter.CreateCheckStatusResponse(req, instanceId);
         }
     }
