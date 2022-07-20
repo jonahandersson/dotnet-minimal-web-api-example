@@ -6,7 +6,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: DotNet6MinimalAPIDemo
   DOTNET_CORE_VERSION: 6.0.x
-  WORKING_DIRECTORY: .csproj
+  WORKING_DIRECTORY: DotNetMinimalAPIDemo.csproj
   CONFIGURATION: Release
   AZURE_WEBAPP_PACKAGE_PATH: ./publish
   AZURE_APIM_RESOURCE_PATH: /
@@ -66,7 +66,7 @@ jobs:
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.DotNet6MinimalAPIDemo_ca8d }}
     - name: Azure Login
-      uses: azure/login@v1
+      uses: azure/@v1
       with:
         creds: ${{ secrets.DotNetMinAPIDemoApiManagementService_spn }}
     - name: Import API into Azure API Management
