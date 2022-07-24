@@ -8,7 +8,7 @@ env:
   DOTNET_CORE_VERSION: 6.0.x
   WORKING_DIRECTORY: .
   CONFIGURATION: Release
-  AZURE_WEBAPP_PACKAGE_PATH: ./publish
+  AZURE_WEBAPP_PACKAGE_PATH: DotNetMinimalAPIDemo/bin/Release/net6.0./publish
   AZURE_APIM_RESOURCE_PATH: /
   AZURE_APIM_RESOURCEGROUP: rg-jonahdev-net6minimalapidemo
   AZURE_APIM_SERVICENAME: DotNetMinAPIDemoApiManagementService
