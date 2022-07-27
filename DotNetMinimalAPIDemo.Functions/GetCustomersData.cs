@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DotNetMinimalAPIDemo.Functions.DataModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -19,6 +20,7 @@ namespace Company.Function
             ConnectionStringSetting = "AzureSqlDBConnectionString")] IEnumerable<Object> result,
             ILogger log)
         {
+            //TODO Use customer object
             var checkResult = result;
             log.LogInformation("C# HTTP trigger with SQL Input Binding function processed a request.");
 
