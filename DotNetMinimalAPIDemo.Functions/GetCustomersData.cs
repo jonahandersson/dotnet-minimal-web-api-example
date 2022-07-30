@@ -11,11 +11,12 @@ namespace Company.Function
 {
     public static class GetCustomersData
     {
+      
         // Visit https://aka.ms/sqlbindingsinput to learn how to use this input binding
     [FunctionName("GetCustomersDataFromDb")]
          public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
-            [Sql("SELECT * FROM [SalesLT].[Customer]",
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "getcustomersdatafromdb")] HttpRequest req,
+            [Sql("SELECT id FROM [SalesLT].[Customer]",
             CommandType = System.Data.CommandType.Text,
             ConnectionStringSetting = "AzureSqlDBConnectionString")] IEnumerable<Object> result,
             ILogger log)

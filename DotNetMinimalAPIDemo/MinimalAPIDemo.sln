@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetMinimalAPIDemo", "DotNetMinimalAPIDemo.csproj", "{B04566D6-7822-41F7-BA29-B5CF594E72E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetMinimalAPIDemo.Functions", "..\DotNetMinimalAPIDemo.Functions\DotNetMinimalAPIDemo.Functions.csproj", "{AAA640CC-D9FA-4B95-ABDA-ACB1D503BB2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetMinimalAPIDemo.Functions", "..\DotNetMinimalAPIDemo.Functions\DotNetMinimalAPIDemo.Functions.csproj", "{AAA640CC-D9FA-4B95-ABDA-ACB1D503BB2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
