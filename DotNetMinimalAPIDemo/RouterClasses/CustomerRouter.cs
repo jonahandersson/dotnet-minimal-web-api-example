@@ -84,6 +84,24 @@ namespace AdventureWorksMinimalAPIDemo.RouterClasses
         }
 
         /// <summary>
+        /// GET a single row of data
+        /// </summary>
+        /// <returns>An IResult object</returns>
+        protected virtual IResult GetByFirstName(string name)
+        {
+            // Locate a single row of data
+            Customer? current = GetAll()
+            .Find(c => c.FirstName == name);
+            if (current != null)
+            {
+                return Results.Ok(current);
+            }
+            else
+            {
+                return Results.NotFound();
+            }
+        }
+        /// <summary>
         /// INSERT new data
         /// </summary>
         /// <returns>An IResult object</returns>
@@ -162,6 +180,9 @@ namespace AdventureWorksMinimalAPIDemo.RouterClasses
 
             app.MapGet($"/{UrlFragment}/{{id:int}}",
             (int id) => Get(id));
+
+            app.MapGet($"/{UrlFragment}/{{name:string}}",
+           (string name) => GetByFirstName(name));
 
             app.MapPost($"/{UrlFragment}",
             (Customer entity) => Post(entity));
