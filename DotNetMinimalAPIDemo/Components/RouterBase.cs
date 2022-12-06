@@ -1,4 +1,4 @@
-﻿namespace AdventureWorksMinimalAPIDemo.Components
+﻿namespace DotNetMinimalAPIDemo.Components
 {
     public class RouterBase
     {

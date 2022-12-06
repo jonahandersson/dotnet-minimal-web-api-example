@@ -1,7 +1,7 @@
-﻿using AdventureWorksMinimalAPIDemo.Components;
-using AdventureWorksMinimalAPIDemo.EntityClasses;
+﻿using DotNetMinimalAPIDemo.EntityClasses;
+using DotNetMinimalAPIDemo.Components;
 
-namespace AdventureWorksMinimalAPIDemo.RouterClasses
+namespace DotNetMinimalAPIDemo.RouterClasses
 {
     /// <summary>
     /// Product Router inherits from the Router Base class

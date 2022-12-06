@@ -1,4 +1,4 @@
-﻿namespace AdventureWorksMinimalAPIDemo.EntityClasses
+﻿namespace DotNetMinimalAPIDemo.EntityClasses
 {
     #nullable disable
     public partial class Customer

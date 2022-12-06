@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "AdventureWorksMinimalAPIDemo": {
+    "DotNetMinimalAPIDemo": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

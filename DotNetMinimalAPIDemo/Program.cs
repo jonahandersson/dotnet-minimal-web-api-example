@@ -1,6 +1,6 @@
-using AdventureWorksMinimalAPIDemo.Components;
-using AdventureWorksMinimalAPIDemo.RouterClasses;
 using DotNetMinimalAPIDemo.RouterClasses;
+using DotNetMinimalAPIDemo.Components;
+
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
@@ -11,12 +11,18 @@ builder.Logging.AddConsole();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors();
+
 // Add "Router" classes as a service
 builder.Services.AddScoped<RouterBase, ProductRouter>();
-builder.Services.AddScoped<RouterBase,CustomerRouter>();
-builder.Services.AddScoped<RouterBase,OrderRouter>();
+builder.Services.AddScoped<RouterBase, CustomerRouter>();
 
 var app = builder.Build();
+
+//Use Cors need NuGet Package for it.
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
+.WithOrigins("https://localhost:5296", "http://localhost:64714"));
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -33,6 +39,7 @@ using (var scope = app.Services.CreateScope())
 {
     // Build collection of all RouterBase classes
     var services = scope.ServiceProvider.GetServices<RouterBase>();
+    
     // Loop through each RouterBase class
     foreach (var item in services)
     {

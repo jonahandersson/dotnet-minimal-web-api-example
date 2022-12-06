@@ -1,4 +1,4 @@
-﻿namespace AdventureWorksMinimalAPIDemo.EntityClasses
+﻿namespace DotNetMinimalAPIDemo.EntityClasses
 {
     public class Product
     {

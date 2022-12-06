@@ -1,7 +1,7 @@
-﻿using AdventureWorksMinimalAPIDemo.Components;
-using AdventureWorksMinimalAPIDemo.EntityClasses;
+﻿using DotNetMinimalAPIDemo.EntityClasses;
+using DotNetMinimalAPIDemo.Components;
 
-namespace AdventureWorksMinimalAPIDemo.RouterClasses
+namespace DotNetMinimalAPIDemo.RouterClasses
 {
     public class CustomerRouter: RouterBase
     {
@@ -181,12 +181,12 @@ namespace AdventureWorksMinimalAPIDemo.RouterClasses
             app.MapGet($"/{UrlFragment}/{{id:int}}",
             (int id) => Get(id));
 
-            app.MapGet($"/{UrlFragment}/{{name:string}}",
+            app.MapGet($"/{UrlFragment}/{{name}}",
            (string name) => GetByFirstName(name));
 
             app.MapPost($"/{UrlFragment}",
             (Customer entity) => Post(entity));
-
+            
             app.MapPut($"/{UrlFragment}/{{id:int}}",
             (int id, Customer entity) => Put(id, entity));
 
