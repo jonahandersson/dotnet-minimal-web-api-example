@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apis2": {
+      "apiEndpoint": "https://apim-minimalwebapi-demo.azure-api.net/",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/apim-minimalwebapi-demo/apis/DotNetMinimalAPIDemo",
+      "type": "apis.azure"
+    }
+  }
+}
