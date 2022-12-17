@@ -5,7 +5,7 @@
 
 #### DESCRIPTION:
 
-Simple example in C# .NET 6/7 for minimal web APIs with basic CRUD operations and example data 
+Simple example in C# .NET 7 for minimal web APIs with basic CRUD operations and example data 
 
 ##### MINIMAL APIs - ORIGIN AND WHAT?
 
