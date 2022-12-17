@@ -2,15 +2,20 @@
 ##### Example source code with simple CRUD Operations (PUT, POST, GET, DELETE) with Swagger/Open API 
 
 #### NOTE: Ongoing project 
-#### BLOG POST: Minimal Web APIs in .NET and Azure API Management Combined
+
 #### DESCRIPTION:
 
-Simple example in C# .NET 6/7 for minimal web APIs with basic CRUD operations and example data. 
+Simple example in C# .NET 6/7 for minimal web APIs with basic CRUD operations and example data 
 
 ##### MINIMAL APIs - ORIGIN AND WHAT?
 
-Minimal APIs are architected to create HTTP APIs with minimal dependencies. They are ideal for microservices and apps that want to include only the minimum files, features, and dependencies in ASP.NET Core. History of the minimal API traces back in November 2019
+Minimal APIs are architected to create HTTP APIs with minimal dependencies. They are ideal for microservices and apps that want to include only the minimum files, features, and dependencies in ASP.NET Core. History of the minimal API traces back in November 2019.
 
+More details about it blogged on my website <a href="https://jonahandersson.tech/minimal-web-apis-in-net-and-azure-api-management-combined/" target="_blank">Minimal Web APIs in .NET and Azure API Management Combined</a>
+
+
+Below is the image that shows how minimal API works with OpenAPI (Swagger)
+![alt text](https://github.com/jonahandersson/dotnet-minimal-web-api-example/blob/master/minimalAPIDemoExample.png )
 
 ### REFERENCES, EXAMPLES AND QUICKSTARTS
 
